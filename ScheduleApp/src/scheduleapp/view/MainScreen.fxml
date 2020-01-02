@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="1115.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduleapp.view.MainScreenController">
+   <children>
+      <ListView fx:id="lstCustomers" layoutX="51.0" layoutY="110.0" prefHeight="200.0" prefWidth="200.0" />
+      <TableView fx:id="tblAppointments" layoutX="451.0" layoutY="110.0" prefHeight="200.0" prefWidth="625.0">
+        <columns>
+          <TableColumn fx:id="colDate" prefWidth="94.0" text="Date" />
+          <TableColumn fx:id="colStartTime" prefWidth="76.0" text="Start" />
+            <TableColumn fx:id="colEndTime" prefWidth="83.0" text="End" />
+            <TableColumn fx:id="colCustomer" prefWidth="125.0" text="Customer" />
+            <TableColumn fx:id="colLocation" prefWidth="107.0" text="Location" />
+            <TableColumn fx:id="colType" prefWidth="139.0" text="Type" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="cmbSort" layoutX="780.0" layoutY="68.0" prefWidth="150.0" />
+      <Button fx:id="btnCreateAppointment" layoutX="490.0" layoutY="336.0" mnemonicParsing="false" onAction="#onCreateAppointment" text="New Appointment" />
+      <Button fx:id="btnModifyAppointment" layoutX="689.0" layoutY="336.0" mnemonicParsing="false" onAction="#onModifyAppointment" text="Modify Appointment" />
+      <Button fx:id="btnDeleteAppointment" layoutX="890.0" layoutY="336.0" mnemonicParsing="false" onAction="#onDeleteAppointment" text="Delete Appointment" />
+      <Button fx:id="btnPrevious" layoutX="660.0" layoutY="67.0" mnemonicParsing="false" onAction="#onPrevious" text="&lt;- Previous" />
+      <Button fx:id="btnNext" layoutX="955.0" layoutY="67.0" mnemonicParsing="false" onAction="#onNext" text="Next -&gt;" />
+      <Button fx:id="btnNewCustomer" layoutX="285.0" layoutY="149.0" mnemonicParsing="false" onAction="#onAddCustomer" text="New Customer" />
+      <Button fx:id="btnModifyCustomer" layoutX="277.0" layoutY="210.0" mnemonicParsing="false" onAction="#onModify" text="Modify Customer" />
+      <Button fx:id="btnDeleteCustomer" layoutX="278.0" layoutY="270.0" mnemonicParsing="false" onAction="#onDelete" text="Delete Customer" />
+      <Button fx:id="btnExit" layoutX="1040.0" layoutY="415.0" mnemonicParsing="false" onAction="#onExit" text="Exit" />
+      <Label layoutX="102.0" layoutY="69.0" text="Customers">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="494.0" layoutY="69.0" text="Appointments">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="839.0" layoutY="37.0" text="Sort By">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnReport" layoutX="87.0" layoutY="440.0" mnemonicParsing="false" onAction="#onGenerateReport" text="Generate Report" />
+      <Label layoutX="116.0" layoutY="338.0" text="Reports">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbReport" layoutX="51.0" layoutY="383.0" prefHeight="31.0" prefWidth="247.0" />
+   </children>
+</AnchorPane>

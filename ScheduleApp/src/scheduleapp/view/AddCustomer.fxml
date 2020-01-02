@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduleapp.view.AddCustomerController">
+   <children>
+      <Label layoutX="16.0" layoutY="37.0" text="Customer Name" />
+      <TextField fx:id="txtName" layoutX="158.0" layoutY="32.0" prefHeight="31.0" prefWidth="228.0" />
+      <Label layoutX="415.0" layoutY="37.0" text="Active?" />
+      <RadioButton fx:id="rdYes" layoutX="476.0" layoutY="22.0" mnemonicParsing="false" onAction="#onSelectedYes" text="Yes" />
+      <RadioButton fx:id="rdNo" layoutX="476.0" layoutY="53.0" mnemonicParsing="false" onAction="#onSelectedNo" text="No" />
+      <Label layoutX="17.0" layoutY="85.0" text="Address" />
+      <TextField fx:id="txtAddress" layoutX="158.0" layoutY="80.0" prefHeight="31.0" prefWidth="296.0" />
+      <Label layoutX="17.0" layoutY="139.0" text="Address (continued)" />
+      <TextField fx:id="txtAddress2" layoutX="158.0" layoutY="134.0" prefHeight="31.0" prefWidth="296.0" />
+      <Label layoutX="18.0" layoutY="342.0" text="Postal Code" />
+      <TextField fx:id="txtPostalCode" layoutX="158.0" layoutY="337.0" />
+      <Label layoutX="22.0" layoutY="291.0" text="Phone" />
+      <TextField fx:id="txtPhone" layoutX="158.0" layoutY="286.0" />
+      <Label layoutX="17.0" layoutY="190.0" text="City" />
+      <Label layoutX="18.0" layoutY="239.0" text="Country" />
+      <Button fx:id="btnAdd" layoutX="400.0" layoutY="337.0" mnemonicParsing="false" onAction="#onAdd" text="Add" />
+      <Button fx:id="btnCancel" layoutX="476.0" layoutY="337.0" mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
+      <ComboBox fx:id="cmbCity" layoutX="158.0" layoutY="185.0" prefHeight="31.0" prefWidth="187.0" />
+      <ComboBox fx:id="cmbCountry" disable="true" layoutX="158.0" layoutY="234.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="txtCity" disable="true" layoutX="370.0" layoutY="185.0" />
+      <TextField fx:id="txtCountry" disable="true" layoutX="370.0" layoutY="234.0" />
+   </children>
+</AnchorPane>

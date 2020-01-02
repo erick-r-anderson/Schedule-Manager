@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="562.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scheduleapp.view.CreateAppointmentController">
+   <children>
+      <ComboBox fx:id="cmbCustomer" layoutX="202.0" layoutY="21.0" onAction="#onSelect" prefWidth="150.0" />
+      <Label layoutX="37.0" layoutY="286.0" text="Date" />
+      <DatePicker fx:id="dtpMeetingDate" layoutX="198.0" layoutY="281.0" onAction="#onDateSelected" />
+      <Button fx:id="btnCreateAppointment" layoutX="125.0" layoutY="498.0" mnemonicParsing="false" onAction="#onCreateAppointment" text="Create Appointment" />
+      <Label layoutX="39.0" layoutY="26.0" text="Customer" />
+      <Button fx:id="btnCancel" layoutX="398.0" layoutY="498.0" mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
+      <Label layoutX="37.0" layoutY="83.0" text="Appointment Name" />
+      <TextField fx:id="txtName" layoutX="202.0" layoutY="78.0" promptText="New Appointment" />
+      <Label layoutX="38.0" layoutY="132.0" text="Description" />
+      <TextArea fx:id="txtDescription" layoutX="200.0" layoutY="129.0" prefHeight="71.0" prefWidth="369.0" promptText="Add Description" />
+      <Label layoutX="37.0" layoutY="347.0" text="Start Time" />
+      <Label layoutX="37.0" layoutY="398.0" text="End Time" />
+      <ComboBox fx:id="cmbStartHour" layoutX="200.0" layoutY="342.0" prefHeight="31.0" prefWidth="76.0" />
+      <ComboBox fx:id="cmbStartMin" layoutX="319.0" layoutY="342.0" prefHeight="31.0" prefWidth="76.0" />
+      <ComboBox fx:id="cmbEndHour" layoutX="200.0" layoutY="393.0" prefHeight="31.0" prefWidth="76.0" />
+      <ComboBox fx:id="cmbEndMin" layoutX="319.0" layoutY="393.0" prefHeight="31.0" prefWidth="76.0" />
+      <Label layoutX="38.0" layoutY="458.0" text="Appointment Type" />
+      <TextField fx:id="txtType" layoutX="200.0" layoutY="453.0" promptText="Add type" />
+      <Label layoutX="35.0" layoutY="221.0" text="Location" />
+      <TextField fx:id="txtLocation" layoutX="200.0" layoutY="224.0" promptText="Add Location" />
+   </children>
+</AnchorPane>

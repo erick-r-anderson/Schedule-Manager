@@ -1,0 +1,87 @@
+//Database creation SQL script
+//Will create th/16/e database compatabile with the ScheduleApp JavaFX program in MySQL
+//By Erick Anderson, adapted from material from Western Governor's University
+6/16/19
+
+CREATE TABLE `country` (
+  `countryId` int(10) NOT NULL AUTO_INCREMENT,
+  `country` varchar(50) NOT NULL,
+  `createDate` datetime NOT NULL,
+  `createdBy` varchar(40) NOT NULL,
+  `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `lastUpdateBy` varchar(40) NOT NULL,
+  PRIMARY KEY (`countryId`)
+) AUTO_INCREMENT=0;
+
+CREATE TABLE `city` (
+ `cityId` int(10) NOT NULL AUTO_INCREMENT,
+ `city` varchar(50) NOT NULL,
+ `countryId` int(10) NOT NULL AUTO_INCREMENT,
+ `country` varchar(50) NOT NULL,
+ `createDate` datetime NOT NULL,
+ `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ `lastUpdateBy` varchar(40) NOT NULL,
+ PRIMARY KEY(`countryId`)
+) AUTO_INCREMENT = 0;
+
+CREATE TABLE `address` (
+`addressId` int(10) NOT NULL AUTO_INCREMENT,
+`address` varchar(50) NOT NULL,
+`address2` varchar(50),
+`cityId` int(10) NOT NULL,
+`postalCode` varchar(10) NOT NULL,
+`phone` varchar(20) NOT NULL,
+`createDate` datetime NOT NULL,
+`createdBy` varchar(40) NOT NULL,
+`lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+`lastUpdateBy` varchar(40) NOT NULL,
+PRIMARY KEY (`addressId`),
+FOREIGN KEY (`cityId`) REFERENCES `city` (`cityId`)
+) AUTO_INCREMENT = 0;
+
+CREATE TABLE `customer` (
+`customerId` int(10) NOT NULL AUTO_INCREMENT,
+`customerName` varchar(45) NOT NULL,
+`addressId` int(10) NOT NULL,
+`active` tinyint(1) NOT NULL,
+`createDate` datetime NOT NULL,
+`createdBy` varchar(40) NOT NULL,
+`lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+`lastUpdateBy` varchar(40) NOT NULL,
+PRIMARY KEY (`customerId`),
+FOREIGN KEY (`addressId`) references `address` (`addressId`)
+) AUTO_INCREMENT = 0;
+
+CREATE TABLE `user` (
+	`userId` int(11) NOT NULL AUTO_INCREMENT,
+    `userName` varchar(50) NOT NULL,
+	`password` varchar(50) NOT NULL,
+    `active` tinyint(4) DEFAULT NULL,
+    `createDate` dateTime NOT NULL,
+    `createdBy` varchar(40) NOT NULL,
+    `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    `lastUpdateBy` varchar(40) NOT NULL,
+    PRIMARY KEY (`userId`)
+    ) AUTO_INCREMENT = 0;
+
+CREATE TABLE `appointment` (
+`appointmentId` int(10) NOT NULL AUTO_INCREMENT,
+`customerId` int(10) NOT NULL,
+`userId` int(11) NOT NULL,
+`title`  varchar(255) NOT NULL,
+`description` text NOT NULL,
+`location` text NOT NULL,
+`contact` text NOT NULL,
+`url` varchar(255) NOT NULL,
+`start` datetime NOT NULL,
+`end` datetime NOT NULL,
+`createDate` datetime NOT NULL,
+`lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+`lastUpdateBy` varchar(40) NOT NULL,
+`type` text NOT NULL,
+PRIMARY KEY (`appointmentId`),
+FOREIGN KEY (`customerId`) REFERENCES `customer` (`customerId`),
+FOREIGN KEY (`userId`) REFERENCES `user` (`userId`)
+) AUTO_INCREMENT = 0;
+
+
